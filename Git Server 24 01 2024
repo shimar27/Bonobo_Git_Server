@@ -1,0 +1,47 @@
+Site web : https://bonobogitserver.com/install/ 
+
+https://www.eviltester.com/2019/01/install-windows-git-server.html 
+
+
+Install Steps for Git Server
+useful git and shell commands used
+Step By Step Video Showing Install of Bonobo Git Server
+TLDR; Bonobo is a free and simple to install Git Server for windows.
+
+The Bonobo git server install page instructions don’t fully match the process I had to use to install, so I’ve documented the process here.
+
+I will show you the steps to install a local Git server on Windows 10.
+
+Install Steps for Git Server
+The Git Server used is Bonobo Git Server, this runs on IIS on Windows.
+
+https://bonobogitserver.com/
+
+Pre-requisite:
+
+use Turn Windows Features On and Off to install
+Internet Information Services > Web Management Tools > IIS Management Console
+Internet Information Services > World Wide Web Services > Application Development Features > ASP .Net 4.7
+Internet Information Services > World Wide Web Services > Common HTTP Features > Static Content
+Install:
+
+download the zip file
+unarchive the zip file
+copy the contents of the zip file folder to C:\inetpub\wwwroot
+change the security properties of the App_Data folder to allow modify access to the IIS user
+check Anonymous Authentication is enabled
+visit http://localhost/Bonobo.Git.Server
+create a user
+amend settings to “allow user repository creation” and “allow push to create repositories”
+create a repo
+push repo to your server
+useful git and shell commands used
+git status
+vi readme.md
+git init
+git status
+git add -A
+git commit -m "my first commit"
+git status
+git remote add origin http://servernameorip/Bonobo.Git.Server/test.git
+git push -u origin master
